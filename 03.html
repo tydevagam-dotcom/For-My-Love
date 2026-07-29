@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Letter For You ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:"Georgia",serif;
+
+    background:
+    radial-gradient(circle at top,#4b0082,#14002b,#000);
+
+}
+
+
+/* Stars */
+
+.star{
+
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+
+    animation:twinkle 2s infinite alternate;
+
+}
+
+
+@keyframes twinkle{
+
+    from{
+        opacity:0.3;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* Letter Paper */
+
+.letter{
+
+    width:85%;
+    max-width:800px;
+
+    height:80vh;
+
+    padding:45px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.95),
+        rgba(255,230,240,0.95)
+    );
+
+
+    border-radius:25px;
+
+    color:#6b0035;
+
+    box-shadow:
+
+    0 0 50px rgba(255,105,180,0.7);
+
+    position:relative;
+
+    z-index:10;
+
+    overflow:auto;
+
+    animation:openLetter 2s ease;
+
+}
+
+
+
+@keyframes openLetter{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(0.7) rotateX(30deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+h1{
+
+    text-align:center;
+
+    font-size:50px;
+
+    color:#d6006c;
+
+    margin-bottom:30px;
+
+    text-shadow:0 0 15px pink;
+
+}
+
+
+
+.message{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+
+/* Writing area */
+
+textarea{
+
+    width:100%;
+
+    height:300px;
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    border:2px solid #ff69b4;
+
+    background:#fff7fb;
+
+    color:#8b004f;
+
+    font-size:20px;
+
+    font-family:"Georgia",serif;
+
+    resize:none;
+
+    outline:none;
+
+}
+
+
+textarea:focus{
+
+    box-shadow:0 0 20px pink;
+
+}
+
+
+/* Floating Hearts */
+
+.heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    color:#ff1493;
+
+    z-index:2;
+
+    animation:rise 8s linear infinite;
+
+}
+
+
+@keyframes rise{
+
+    0%{
+
+        transform:translateY(0) scale(.5);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="letter">
+
+
+<h1>
+💌  
+</h1>
+
+
+<div class="message">
+
+<p>
+My Love ❤️
+</p>
+
+
+<textarea placeholder="just a place to write how u fell...i havent learn to code in satellite lvl nor do i have private servers ...so it wont reach me ..just send me a screen shot of ur feeling ...signin off mam."
+></textarea>
+<button onclick="goToFourthpage()">go onnn...</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+    function goToFourthpage() {window.location.href = "04.html";}
+
+
+// Create stars
+
+for(let i=0;i<120;i++){
+
+    let star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"vw";
+
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDelay=Math.random()*2+"s";
+
+    document.body.appendChild(star);
+
+}
+
+
+
+// Create hearts
+
+function createHeart(){
+
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="❤️";
+
+
+    heart.style.left=Math.random()*100+"vw";
+
+
+    heart.style.fontSize=
+    (15+Math.random()*35)+"px";
+
+
+    heart.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },10000);
+
+}
+
+
+setInterval(createHeart,250);
+
+
+</script>
+
+
+</body>
+
+</html>

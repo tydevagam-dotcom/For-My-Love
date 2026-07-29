@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love Letter ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+
+    font-family:"Georgia",serif;
+}
+
+
+/* Love Letter */
+
+.letter{
+
+    width:85%;
+    max-width:700px;
+
+    padding:40px;
+
+    background:rgba(255,255,255,0.25);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.5);
+
+    animation:showLetter 2s ease;
+
+}
+
+
+@keyframes showLetter{
+
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+h1{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 10px white,
+    0 0 30px pink;
+
+}
+
+
+.message{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+
+.message p{
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* Continue Button */
+
+button{
+
+    margin-top:30px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff1493,#ff69b4);
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 20px #ff1493;
+
+    transition:0.3s;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 40px white;
+
+}
+
+
+
+/* Floating Hearts */
+
+.heart{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff1744;
+
+    animation:float 7s linear infinite;
+
+}
+
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0) scale(0.5);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:translateY(-120vh) scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="letter">
+
+<h1>
+💌 Token of love 💌
+</h1>
+
+
+<div class="message">
+
+<p>
+My lov ❤️
+</p>
+
+
+<p>
+idk if this web satisfied you ...but deep down i did put alot of efforts to make this work...just in case if you think ill leave you lrt these efforts conme in ur thoughts
+</p>
+
+
+<p>
+
+I hope you always remember how special you are to me. 💖
+</p>
+
+
+<p>
+Forever yours ❤️
+</p>
+
+</div>
+
+
+<button onclick="nextPage()">
+🎀 Continue
+</button>
+
+
+</div>
+
+
+
+<script>
+
+
+// Create floating hearts
+
+function createHeart(){
+
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="❤️";
+
+
+    heart.style.left=Math.random()*100+"vw";
+
+
+    heart.style.fontSize=
+    (20 + Math.random()*40)+"px";
+
+
+    heart.style.animationDuration=
+    (4 + Math.random()*5)+"s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },9000);
+
+}
+
+
+setInterval(createHeart,300);
+
+
+
+// Move to page 3
+
+function nextPage(){
+
+    window.location.href="03.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

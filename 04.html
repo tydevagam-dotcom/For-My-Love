@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>smile ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e0,#fff5f8);
+    overflow:hidden;
+}
+
+
+.card{
+    width:400px;
+    padding:45px;
+    text-align:center;
+    background:white;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    animation:appear 1.5s ease;
+}
+
+
+.heart{
+    font-size:55px;
+    animation:beat 1s infinite;
+}
+
+
+h1{
+    margin-top:15px;
+    color:#d63384;
+    font-size:45px;
+}
+
+
+p{
+    margin:20px 0;
+    color:#555;
+    font-size:18px;
+    line-height:1.7;
+}
+
+
+
+button{
+    margin-top:15px;
+    padding:14px 40px;
+    border:none;
+    border-radius:30px;
+    background:#d63384;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+button:hover{
+    background:#ad1457;
+    transform:scale(1.05);
+}
+
+
+
+@keyframes beat{
+
+    50%{
+        transform:scale(1.2);
+    }
+
+}
+
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<div class="heart">
+❤️
+</div>
+
+
+<h1>
+smileee..❤️
+</h1>
+
+
+<p>
+you know what ...theres noo escape from mehhh
+<br>
+youre stuck with me ..mammmm
+</p>
+
+
+
+<button onclick="showMessage()">
+Open My Heart 💌
+</button>
+
+
+
+</div>
+
+
+
+<script>
+
+function showMessage(){
+
+    alert("hope this made you smilee... ❤️");
+
+}
+
+</script>
+
+
+</body>
+</html>

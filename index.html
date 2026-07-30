@@ -32,6 +32,51 @@ button{
     transition:0.3s;
 
 }
+    #loveAlert{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup{
+    background: #fff;
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid #ff6fa5;
+    box-shadow: 0 15px 35px rgba(255,105,180,.35);
+}
+
+.popup h1{
+    color: #ff2d75;
+    margin-bottom: 15px;
+}
+
+.popup p{
+    color: #555;
+    line-height: 1.6;
+}
+
+.popup button{
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #ff4d88;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button:hover{
+    background: #ff2d75;
+}
 
 
 button:hover{
@@ -126,6 +171,21 @@ opacity:0;
 </head>
 
 <body>
+    <div id="loveAlert">
+    <div class="popup">
+        <h1>🚨 Love Alert! ❤️</h1>
+
+        <p>
+            Entering this page may increase your heartbeat,
+            cause uncontrollable smiling, and fill your heart
+            with love and happiness.
+        </p>
+
+        <p><strong>Proceed at your own risk. 💖</strong></p>
+
+        <button onclick="closeAlert()">Continue ❤️</button>
+    </div>
+</div>
 
 <div class="container">
     <h1>💓 TO MY BBG 💓</h1>
@@ -163,6 +223,11 @@ function createHeart(){
 
 setInterval(createHeart,200);
 
+</script>
+    <script>
+function closeAlert() {
+    document.getElementById("loveAlert").style.display = "none";
+}
 </script>
 
 </body>

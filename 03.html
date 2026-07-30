@@ -9,7 +9,39 @@
 <title>For Mehh.. ❤️</title>
 
 <style>
+button{
+    background:#ff2d55;
+    color:white;
+    border:none;
+    padding:16px 45px;
+    font-size:22px;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.3s;
+    animation:pulse 2s infinite;
+    box-shadow:0 0 20px rgba(255,45,85,.5);
+}
 
+.heart-btn:hover{
+    background:#ff4d73;
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(255,45,85,.8);
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 10px rgba(255,45,85,.4);
+    }
+    50%{
+        transform:scale(1.05);
+        box-shadow:0 0 30px rgba(255,45,85,.8);
+    }
+    100%{
+        transform:scale(1);
+        box-shadow:0 0 10px rgba(255,45,85,.4);
+    }
+}
 *{
     margin:0;
     padding:0;

@@ -300,17 +300,11 @@ Question 1 / 11
 
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbzcp4pBLBnjK78HOrIGZ6zDuOh2lbx4MElquREvlYMQKbCtMusTVuGy7RGi5-kOE1Hgpg/exec";
-
 let current = 0;
 
-let questions = document.querySelectorAll(".question");
-
-let nextBtn = document.getElementById("nextBtn");
-
-let counter = document.getElementById("counter");
-
-let form = document.getElementById("loveForm");
+const questions = document.querySelectorAll(".question");
+const nextBtn = document.getElementById("nextBtn");
+const counter = document.getElementById("counter");
 
 
 nextBtn.onclick = function(){
@@ -324,19 +318,24 @@ nextBtn.onclick = function(){
     }
 
 
+    // Last question - go to your next page
+    if(current === questions.length - 1){
+
+        window.location.href = "YOUR_NEXT_PAGE.html";
+        return;
+
+    }
+
+
     questions[current].classList.remove("active");
 
     current++;
 
+    questions[current].classList.add("active");
 
-    if(current < questions.length){
 
-        questions[current].classList.add("active");
-
-        counter.innerHTML =
-        "Question " + (current + 1) + " / " + questions.length;
-
-    }
+    counter.innerHTML =
+    "Question " + (current + 1) + " / " + questions.length;
 
 
     if(current === questions.length - 1){
@@ -345,38 +344,14 @@ nextBtn.onclick = function(){
 
     }
 
-
-    if(current === questions.length){
-
-        let formData = new FormData(form);
-
-        let data = {};
-
-        formData.forEach((value,key)=>{
-            data[key] = value;
-        });
-
-
-        fetch(scriptURL,{
-            method:"POST",
-            body:JSON.stringify(data)
-        })
-        .then(()=>{
-            alert("Your answers have been sent ❤️");
-            window.location.href="03.html";
-        })
-        .catch(()=>{
-            alert("Something went wrong 💔");
-        });
-
-    }
-
 };
 
 </script>
 
 
-};
+
+
+
 
 
 </script>

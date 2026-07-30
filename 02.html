@@ -1,0 +1,103 @@
+<section class="love-form">
+    <h1>💌 A Few Questions For You ❤️</h1>
+
+    <form action="nextpage.html" method="get">
+
+        <label>1. Your Name 💖</label>
+        <input type="text" name="name" required>
+
+        <label>2. Who are you to him? 🌹</label>
+        <input type="text" name="relationship" required>
+
+        <label>3. How do you want him to call you? 🥰</label>
+        <input type="text" name="nickname" required>
+
+        <label>4. On a scale of 1–100, how much do you love him? ❤️</label>
+        <input type="number" name="love" min="1" max="100" required>
+
+        <label>5. Is there anything you want him to do for you? 💕</label>
+        <textarea name="wish" rows="3" required></textarea>
+
+        <label>6. Is there any regret you felt choosing him? 🌸</label>
+        <textarea name="regret" rows="3" required></textarea>
+
+        <label>7. If there's one thing you could do to him, what would it be? 💌</label>
+        <textarea name="thing" rows="3" required></textarea>
+
+        <label>8. On your favorite people list, what position am I at? ✨</label>
+        <input type="number" name="position" min="1" required>
+
+        <label>9. One thing about him that annoys you. 🙈</label>
+        <textarea name="annoy" rows="3" required></textarea>
+
+        <label>10. Did my care make you feel loved? ❤️</label>
+        <input type="text" name="care" required>
+
+        <label>11. "You are special to me." Is it the same for you? 💖</label>
+        <input type="text" name="special" required>
+
+        <button type="submit">Submit ❤️</button>
+
+    </form>
+</section>
+body{
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+    font-family:Poppins,sans-serif;
+}
+
+.love-form{
+    max-width:700px;
+    margin:50px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(255,105,180,.25);
+    border:3px solid #ff80ab;
+}
+
+.love-form h1{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    color:#d81b60;
+    font-weight:600;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:2px solid #ffc1d9;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#ff4d88;
+}
+
+button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff4d88,#ff80ab);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+<form action="03.html" method="get">

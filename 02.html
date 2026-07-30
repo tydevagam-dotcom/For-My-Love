@@ -147,7 +147,7 @@ button:hover{
 <h1>Love Questions</h1>
 
 
-<form action="03.html" method="get" id="loveForm">
+<form id="loveForm">
 
 
 <div class="question active">
@@ -300,6 +300,8 @@ Question 1 / 11
 
 <script>
 
+const scriptURL = "https://script.google.com/macros/s/AKfycbz1oj6p9d8RMxCQoWPOjMNMHjuvOXhV5LH4PYNjAWnynv2t_PoDPHgOhCVpG5WRK2KsTw/exec";
+
 let current = 0;
 
 let questions = document.querySelectorAll(".question");
@@ -308,23 +310,21 @@ let nextBtn = document.getElementById("nextBtn");
 
 let counter = document.getElementById("counter");
 
+let form = document.getElementById("loveForm");
+
 
 nextBtn.onclick = function(){
-
 
     let answer = questions[current].querySelector("input, textarea");
 
 
     if(answer.value.trim() === ""){
-
         alert("Please answer this question ❤️");
         return;
-
     }
 
 
     questions[current].classList.remove("active");
-
 
     current++;
 
@@ -341,16 +341,39 @@ nextBtn.onclick = function(){
 
     if(current === questions.length - 1){
 
-        nextBtn.innerHTML="Submit ❤️";
+        nextBtn.innerHTML = "Submit ❤️";
 
     }
 
 
     if(current === questions.length){
 
-        document.getElementById("loveForm").submit();
+        let formData = new FormData(form);
+
+        let data = {};
+
+        formData.forEach((value,key)=>{
+            data[key] = value;
+        });
+
+
+        fetch(scriptURL,{
+            method:"POST",
+            body:JSON.stringify(data)
+        })
+        .then(()=>{
+            alert("Your answers have been sent ❤️");
+            window.location.href="nextpage.html";
+        })
+        .catch(()=>{
+            alert("Something went wrong 💔");
+        });
 
     }
+
+};
+
+</script>
 
 
 };

@@ -138,6 +138,114 @@ button:hover{
 
 
 <body>
+    <div id="lovePopup">
+
+    <div class="popupBox">
+
+        <div class="heart">❤️</div>
+
+        <h2>Before We Begin 💕</h2>
+
+        <p>
+            I have a few questions for you.
+            Answer them honestly and from your heart. 🌹
+        </p>
+
+        <button onclick="startQuiz()">
+            Start Quiz 💖
+        </button>
+
+    </div>
+
+</div>
+
+
+<style>
+
+#lovePopup{
+
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,105,150,0.35);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+
+}
+
+
+.popupBox{
+
+    background:white;
+    width:350px;
+    padding:35px;
+    text-align:center;
+    border-radius:30px;
+    border:3px solid #ff7aa2;
+    box-shadow:0 20px 50px rgba(255,0,100,0.3);
+
+}
+
+
+.popupBox .heart{
+
+    font-size:50px;
+
+}
+
+
+.popupBox h2{
+
+    color:#e91e63;
+    margin:15px;
+
+}
+
+
+.popupBox p{
+
+    color:#555;
+    line-height:1.6;
+
+}
+
+
+.popupBox button{
+
+    margin-top:25px;
+    padding:12px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d88;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+
+}
+
+
+.popupBox button:hover{
+
+    background:#e91e63;
+
+}
+
+</style>
+
+
+<script>
+
+function startQuiz(){
+
+    document.getElementById("lovePopup").style.display="none";
+
+}
+
+</script>
 
 
 <div class="card">
